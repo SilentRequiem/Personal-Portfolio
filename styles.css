@@ -100,7 +100,7 @@ nav a:hover{opacity:1}
 /* Rope timeline */
 .rope{position:relative; padding:40px 0}
 .rope__line{position:absolute; left:50%; top:0; bottom:0; width:6px; border-radius:6px; background:linear-gradient(to bottom, var(--hu-gold), var(--hu-blue))}
-.rope__node{width:min(520px, 90%); margin:38px 0; position:relative; left:50%; transform:translateX(-50%); background:rgba(255,255,255,.75); border:1px solid #e6eef5; border-radius:var(--radius); padding:12px}
+.rope__node{width:min(520px, 90%); margin:38px 0; position:relative; left:50%; transform:translateX(-50%); background:rgba(255,255,255,.85); border:2px solid rgba(0,0,0,0.85); border-radius:var(--radius); padding:12px; box-shadow: 0 8px 18px rgba(0,0,0,0.06);} 
 .rope__node:nth-child(odd){left:calc(50% - 22px)}
 .rope__node:nth-child(even){left:calc(50% + 22px)}
 .rope__node img{
