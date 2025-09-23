@@ -21,15 +21,17 @@
   <header class="site-header">
     <a class="logo brand" href="#top">
       <img src="img/hu_logo.png" alt="Hampton University Pirates logo">
-      <span>MA</span>
+      <span>Michael Amoo</span>
     </a>
     <nav>
-      <a href="#intro">About</a>
-      <a href="#certs">Certs</a>
-      <a href="#activities">Activities</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-    </nav>
+  <a href="#intro">About</a>
+  <a href="#certs">Certs</a>
+  <a href="#activities">Activities</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="Etc/MAres.pdf" target="_blank" rel="noreferrer">Résumé</a>
+</nav>
+
     <button id="soundToggle" class="sound-btn" aria-pressed="false" aria-label="Toggle background music">🔈</button>
   </header>
 
@@ -40,7 +42,7 @@
         <img class="headshot" src="img/michael_headshot.jpg" alt="Michael Amoo headshot" />
         <div class="intro-copy">
           <h1>Michael Amoo</h1>
-          <p class="muted">Cyber Security Major • Hampton University</p>
+          <p class=>Cyber Security Major • Hampton University • Grad May 2027</p>
           <ul class="contact">
             <li>Cell: (757) 776-2017</li>
             <li>Email: michaelamoo54@gmail.com</li>
@@ -119,10 +121,8 @@
       <div class="container">
         <h2>Skills & Languages</h2>
         <ul class="skills">
-          <li><strong>Languages:</strong> Python, Java, JavaScript, Swift, C (intro)</li>
-          <li><strong>Web:</strong> HTML/CSS, React basics</li>
-          <li><strong>Security:</strong> Wireshark, Burp Suite (basic), Linux</li>
-          <li><strong>Tools:</strong> Git/GitHub, VS Code, Docker (intro)</li>
+          <li><strong>Languages:</strong> Java, Swift, Python</li>
+          <li><strong>Tools:</strong> jGRASP, Xcode, Git/GitHub, Visual Studio Code, Microsoft Word</li>
         </ul>
       </div>
     </section>
@@ -139,12 +139,28 @@
       <div class="container">
         <h2>Projects</h2>
         <div class="cards">
-          <article class="card">
-            <img src="img/project_placeholder.jpg" alt="Project screenshot">
-            <h3>Portfolio (this site)</h3>
-            <p>SVG water transitions, GSAP ScrollTrigger, accessible layout.</p>
-            <a class="btn" href="#" target="_blank" rel="noreferrer">Live</a>
-            <a class="btn btn--outline" href="https://github.com/SilentRequiem/website-challege" target="_blank" rel="noreferrer">Code</a>
+          <article class="card card--large">
+            <div class="project-images">
+              <img src="img/CartLogo.png" alt="HUCart logo" class="project-img">
+              <img src="img/HUCart2.gif" alt="HUCart demo animation" class="project-gif">
+            </div>
+            <div class="card-content">
+              <h3>HUCart — iOS App</h3>
+              <p>● Developed an iOS app that helps students buy items online with a user-friendly interface</p>
+              <p>● Implemented features like user login, store selection, cart management, and order history with
+ efficient state-sharing across views</p>
+              <a class="btn btn--outline" href="https://github.com/SilentRequiem/HUCart" target="_blank" rel="noreferrer">Code</a>
+            </div>
+          </article>
+          <article class="card card--full card--large">
+            <div class="project-images">
+              <div class="project-media">
+                <video class="project-video" src="img/App.mp4" muted loop playsinline autoplay></video>
+                <video class="project-video" src="img/CartCode.mp4" muted loop playsinline autoplay></video>
+              </div>
+            </div>
+            <h3>HUCart — Media</h3>
+            <p>App demo and code walkthrough videos shown alongside the project logo.</p>
           </article>
         </div>
       </div>
@@ -152,7 +168,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> Michael Amoo • Built with HTML/CSS/JS</p>
+    <p>© <span id="year"></span> Michael Amoo</p>
   </footer>
 
   <!-- Background music -->
