@@ -103,9 +103,15 @@ nav a:hover{opacity:1}
 .rope__node figcaption{margin:8px 4px 2px}
 
 /* --- Water masks --- */
-.water-mask{position:relative; height:18svh; overflow:hidden; background: color-mix(in srgb, var(--accent) 60%, var(--hu-blue))}
+.water-mask{
+  position:relative; height:18svh; overflow:hidden;
+  /* set a color we can reuse for the SVG fill */
+  color: color-mix(in srgb, var(--accent) 60%, var(--hu-blue));
+  background: transparent; /* background not needed for the wipe */
+}
 .water-mask svg{width:100%; height:100%; display:block; filter:url(#turbulence)}
-.mask-rect{width:100%; height:100%; fill:inherit}
+/* ensure the wipe rectangle uses the same color instead of default black */
+.mask-rect{width:100%; height:100%; fill: currentColor}
 .water-mask[data-direction="down"]{clip-path: inset(0 0 100% 0)}
 .water-mask[data-direction="up"]{clip-path: inset(100% 0 0 0)}
 .water-mask[data-direction="left"]{clip-path: inset(0 100% 0 0)}
@@ -156,3 +162,83 @@ nav a:hover{opacity:1}
   .card--large .project-video{ width:100%; max-width:100%; max-height:240px; }
 }
 @media (prefers-reduced-motion: reduce){ .water-mask{height:10svh} }
+/* ===== Wave bar (animated) ===== */
+:root{
+--wave-color: color-mix(in srgb, var(--accent) 60%, var(--hu-blue));
+}
+
+
+.wave-mask{
+position: relative; height: 18svh; overflow: hidden;
+background: transparent; /* bar is drawn by the waves */
+}
+
+
+/* Optional: shorter bars on small screens */
+@media (max-width: 820px){ .wave-mask{ height: 12svh; } }
+@media (prefers-reduced-motion: reduce){ .wave-mask{ height: 10svh; } }
+
+
+/* 3 stacked waves with different speeds/phase/opacities */
+.wave{
+position: absolute; left: -10%; right: -10%; bottom: 0; height: 160%;
+background-repeat: repeat-x; background-size: 1200px 100%;
+will-change: transform, background-position;
+filter: saturate(110%);
+}
+
+
+/* SVG wave path used as background image */
+.wave{ background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'>\
+<path fill='%232eaadc' d='M0,60 C150,120 350,0 600,60 C850,120 1050,0 1200,60 L1200,120 L0,120 Z'/>\
+</svg>"); }
+
+
+/* tint to HU water color */
+.wave{ filter: drop-shadow(0 -1px 0 rgba(255,255,255,.2)); }
+.wave path{ fill: var(--wave-color); }
+
+
+/* Layer tuning */
+.wave1{ opacity:.75; animation: waveSlide 12s linear infinite, waveBob 3.8s ease-in-out infinite; }
+.wave2{ opacity:.55; animation: waveSlide 18s linear infinite reverse, waveBob 4.6s ease-in-out infinite; transform: translateY(6px); }
+.wave3{ opacity:.35; animation: waveSlide 28s linear infinite, waveBob 5.4s ease-in-out infinite; transform: translateY(12px); }
+
+/* inverted companion for each wave to avoid a flat edge */
+.wave::before{
+  content: "";
+  position: absolute;
+  left: -10%; right: -10%;
+  height: 160%;
+  /* same SVG background but flipped vertically */
+  background-image: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'>\
+  <path fill='%232eaadc' d='M0,60 C150,120 350,0 600,60 C850,120 1050,0 1200,60 L1200,120 L0,120 Z'/>\
+  </svg>");
+  background-repeat: repeat-x; background-size: 1200px 100%;
+  transform: scaleY(-1);
+  pointer-events: none;
+  filter: drop-shadow(0 -1px 0 rgba(255,255,255,.2));
+}
+
+/* tune the companion opacity and animation to match each layer */
+.wave1::before{ opacity: .45; animation: waveSlide 14s linear infinite; }
+.wave2::before{ opacity: .32; animation: waveSlide 20s linear infinite reverse; transform: scaleY(-1) translateY(6px); }
+.wave3::before{ opacity: .22; animation: waveSlide 30s linear infinite; transform: scaleY(-1) translateY(12px); }
+
+/* place the inverted companion beneath for top-direction masks, otherwise above */
+.wave-mask[data-direction="up"] .wave::before{ bottom: -40%; top: auto; }
+.wave-mask:not([data-direction="up"]) .wave::before{ top: -40%; bottom: auto; }
+
+
+@keyframes waveSlide{ 0%{ background-position-x: 0 } 100%{ background-position-x: -1200px } }
+@keyframes waveBob{ 0%,100%{ transform: translateY(var(--bob,0)) } 50%{ transform: translateY(calc(var(--bob,0) - 8px)) } }
+
+
+/* Direction helpers */
+.wave-mask[data-direction="up"] .wave{ bottom: auto; top: -40%; transform-origin: top; }
+.wave-mask[data-direction="up"] .wave1{ --bob: 0px; }
+.wave-mask[data-direction="up"] .wave2{ --bob: 6px; }
+.wave-mask[data-direction="up"] .wave3{ --bob: 12px; }
+
