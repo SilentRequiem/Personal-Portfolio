@@ -69,7 +69,7 @@ nav a:hover{opacity:1}
 .card{background:rgba(255,255,255,.75); color:inherit; border-radius:var(--radius);
   border:1px solid #e6eef5; padding:16px; box-shadow:0 10px 24px rgba(0,0,0,.06);}
 .panel--dark .card{background:rgba(255,255,255,.06); border-color:#213040}
-.card img{width:100%; height:160px; object-fit:cover; border-radius:10px}
+.card img{width:100%; height:auto; object-fit:contain; border-radius:10px; display:block; max-height:420px}
 .card h3{margin:10px 0 6px}
 .btn{display:inline-block; margin-right:8px; margin-top:8px; padding:8px 12px; border-radius:10px;
   background:var(--hu-blue); color:white; text-decoration:none; font-weight:600;}
@@ -82,7 +82,7 @@ nav a:hover{opacity:1}
   background:rgba(255,255,255,.75); border:1px solid #e6eef5; border-radius:var(--radius); padding:12px;}
 .rope__node:nth-child(odd){left:calc(50% - 22px)}
 .rope__node:nth-child(even){left:calc(50% + 22px)}
-.rope__node img{width:100%; height:240px; object-fit:cover; border-radius:10px; display:block}
+.rope__node img{width:100%; height:auto; object-fit:contain; border-radius:10px; display:block; max-height:360px}
 .rope__node figcaption{margin:8px 4px 2px}
 
 .skills{display:grid; gap:10px; padding-left:18px}
