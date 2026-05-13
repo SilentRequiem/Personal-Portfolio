@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Michael Amoo — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loader" role="status" aria-live="polite" aria-label="Loading">
+    <div class="loader-logo">
+      <img src="img/brand/hu_logo.png" alt="" aria-hidden="true">
+    </div>
+    <div class="loader-wave"></div>
+    <p class="loader-text">Setting sail…</p>
+  </div>
+
+  <!-- Header/Nav for the tabs -->
+  <header class="site-header">
+    <a class="logo brand" href="#top">
+      <img src="img/brand/hu_logo.png" alt="Hampton University Pirates logo">
+      <span>Michael Amoo</span>
+    </a>
+    <nav>
+  <a href="#intro">About</a>
+  <a href="#certs">Certs</a>
+  <a href="#activities">Activities</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="Etc/MAres.pdf" target="_blank" rel="noreferrer">Resume</a>
+  <a href="https://github.com/SilentRequiem/HU-CSC-Work" target="_blank" rel="noreferrer">Coursework</a>
+</nav>
+
+    <button id="soundToggle" class="sound-btn" aria-pressed="false" aria-label="Toggle background music">🔈</button>
+  </header>
+
+  <main id="top">
+    <!-- Intro / Cover Letter -->
+    <section id="intro" class="panel panel--light">
+      <div class="container intro-grid">
+        <img class="headshot" src="img/intro/michael_headshot.jpg" alt="Michael Amoo headshot" />
+        <div class="intro-copy">
+          <h1>Michael Amoo</h1>
+          <p class=>Cyber Security Major • Hampton University • Grad May 2027</p>
+          <ul class="contact">
+            <li>Cell: (757) 776-2017</li>
+            <li>Email: michaelamoo54@gmail.com</li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/macscsr/" target="_blank" rel="noreferrer">Link</a></li>
+          </ul>
+          <h2>Cover Letter</h2>
+          <p>My name is Michael Amoo, a Junior at Hampton University majoring in Cyber Security. I'm currently seeking a Summer 2026 internship in cyber security, software, or AI.</p>
+          <p>Throughout my time at Hampton, I've taken Computer Science and Cyber courses and built skills in Java, Swift, Python, and web development. I enjoy the building side of the field, having worked on iOS apps, websites, and cyber competitions, and I've earned CodePath Honors along the way.</p>
+          <p>I'm a member of the National Society of Black Engineers and Hampton's Cyber Security Club. Excited to put what I've learned into practice this summer.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Waves -->
+<div class="wave-mask" data-direction="down" aria-hidden="true">
+<div class="wave wave1"></div>
+<div class="wave wave2"></div>
+<div class="wave wave3"></div>
+</div>
+
+    <!-- Certificates -->
+    <section id="certs" class="panel panel--dark">
+      <div class="container">
+        <h2>Certificates</h2>
+        <div class="cards">
+          <article class="card">
+            <img src="img/certs/Cyber-1.png" alt="Intro to Cybersecurity Certificate">
+            <h3>Intro to Cybersecurity (Honors)</h3>
+            <p>CodePath · May 2026</p>
+          </article>
+          <article class="card">
+            <img src="img/certs/Engineering-1.png" alt="Foundations of AI Engineering Certificate">
+            <h3>Foundations of AI Engineering (Honors)</h3>
+            <p>CodePath · May 2026</p>
+          </article>
+          <article class="card">
+            <img src="img/certs/TIP-1.png" alt="Technical Interview Prep Certificate">
+            <h3>Technical Interview Prep</h3>
+            <p>CodePath · May 2026</p>
+          </article>
+          <article class="card">
+            <img src="img/certs/TeamNCL-1.png" alt="NCL Fall 2025 Team Game Certificate">
+            <h3>National Cyber League Fall 2025, Team Game</h3>
+            <p>Cyber Skyline · Nov 2025</p>
+          </article>
+          <article class="card">
+            <img src="img/certs/IndivNCL-1.png" alt="NCL Fall 2025 Individual Game Certificate">
+            <h3>National Cyber League Fall 2025, Individual Game</h3>
+            <p>Cyber Skyline · Oct 2025</p>
+          </article>
+          <article class="card">
+            <img src="img/certs/cert_word.png" alt="Microsoft Word Specialist Certificate">
+            <h3>Microsoft Office Specialist: Word Associate (2019)</h3>
+            <p>Certiport · May 2023</p>
+          </article>
+          <article class="card">
+            <img src="img/certs/Wise.png" alt="W!SE Financial Literacy Certificate">
+            <h3>W!SE Financial Literacy</h3>
+            <p>W!SE · May 2022</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Water -->
+    <div class="water-mask" data-direction="left" aria-hidden="true">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+        <rect width="100" height="100" class="mask-rect"/>
+      </svg>
+    </div>
+
+    <!-- Activities on a stake -->
+    <section id="activities" class="panel panel--light">
+      <div class="container">
+        <h2>Activities @ Hampton</h2>
+        <div class="rope">
+          <div class="rope__line"></div>
+          <figure class="rope__node">
+            <img src="img/activities/nsbe.jpg" alt="NSBE event">
+            <figcaption>National Society of Black Engineers</figcaption>
+          </figure>
+
+      <figure class="rope__node">
+        <img src="img/activities/cyber.jpg" alt="Hampton University Cyber Security Club">
+        <figcaption>
+          Hampton University Cyber Security Club
+        </figcaption>
+      </figure>
+
+      <figure class="rope__node">
+        <img src="img/activities/AIclub.jpg" alt="Hampton University AI Club">
+        <figcaption>Hampton University AI Club</figcaption>
+      </figure>
+
+      <figure class="rope__node">
+        <img src="img/activities/Capture.jpg" alt="Hampton × Leidos CTF">
+        <figcaption>
+          Hampton × Leidos Capture the Flags 1 & 2
+        </figcaption>
+      </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Water -->
+    <div class="water-mask" data-direction="right" aria-hidden="true">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+        <rect width="100" height="100" class="mask-rect"/>
+      </svg>
+    </div>
+
+    <!-- Skills -->
+    <section id="skills" class="panel panel--dark">
+      <div class="container">
+        <h2>Skills & Languages</h2>
+        <ul class="skills">
+          <li><strong>Languages:</strong> Java, Swift, Python, HTML, CSS, JavaScript</li>
+          <li><strong>Tools:</strong> jGRASP, Xcode, Git/GitHub, Visual Studio Code, Microsoft Word, Linux</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Water wipe -->
+    <div class="water-mask" data-direction="up" aria-hidden="true">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+        <rect width="100" height="100" class="mask-rect"/>
+      </svg>
+    </div>
+
+    <!-- Projects -->
+    <section id="projects" class="panel panel--light">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="cards">
+          <article class="card card--large">
+            <div class="project-banner">Portfolio Website</div>
+            <div class="card-content">
+              <h3>Portfolio Website</h3>
+              <p style="opacity:.7; margin:4px 0 10px; font-size:.9rem">HTML &nbsp;·&nbsp; CSS &nbsp;·&nbsp; JavaScript</p>
+              <p>● Won 1st place at the Hampton University Cyber Security Club Website Competition (Sept 2025), judged on design and frontend execution</p>
+              <p>● Designed and developed a portfolio site with custom animations, page transitions, a loading screen, and background audio</p>
+              <a class="btn btn--outline" href="https://github.com/SilentRequiem/Personal-Portfolio" target="_blank" rel="noreferrer">Code</a>
+            </div>
+          </article>
+          <article class="card card--large">
+            <div class="project-images">
+              <img src="img/projects/CartLogo.png" alt="HUCart logo" class="project-img">
+              <img src="img/projects/HUCart2.gif" alt="HUCart demo animation" class="project-gif">
+            </div>
+            <div class="card-content">
+              <h3>HUCart — iOS App</h3>
+              <p>● Developed an iOS app that helps students buy items online with a user-friendly interface</p>
+              <p>● Implemented features like user login, store selection, cart management, and order history with
+ efficient state-sharing across views</p>
+              <a class="btn btn--outline" href="https://github.com/SilentRequiem/HUCart" target="_blank" rel="noreferrer">Code</a>
+            </div>
+          </article>
+          <article class="card card--full card--large">
+            <div class="project-images">
+              <div class="project-media">
+                <video class="project-video" src="img/projects/App.mp4" muted loop playsinline autoplay></video>
+                <video class="project-video" src="img/projects/CartCode.mp4" muted loop playsinline autoplay></video>
+              </div>
+            </div>
+            <h3>HUCart — Media</h3>
+            <p>App demo and code walkthrough</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer copyright yada -->
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Michael Amoo</p>
+  </footer>
+
+  <!-- Background Music -->
+  <audio id="bgm" src="audio/road-taken.mp3" preload="true" loop></audio>
+
+  <!-- Scripts -->  
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>  <!-- Water effects animations -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script> <!-- ScrollTrigger plugin that ties animations to scrolling. -->
+  <script src="app.js"></script> <!-- Auto changes the year and handles some of the audio work-->
+</body>
+</html>
